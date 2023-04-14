@@ -8,65 +8,109 @@ using namespace std;
 int main(void)
 {
     /* Declaration, Assignment */
+    {
+        int x;
+        x = 0;
+        cout << x << endl;
+    }
+    {
+        /* C Style */
+        int y = 1;
+        cout << y  << endl;
 
-    int x;
-    x = 0;
-    cout << x << endl;
-
-    /* C Style */
-    int y = 1;
-    cout << y  << endl;
-
-    /* C++ Style */
-    int z(2);
-    cout << z << endl;
-
+        /* C++ Style */
+        int z(2);
+        cout << z << endl;
+    }
     /* Integer Literal */
+    {
+        int num0 = 11;
+        int num1 = 0b11;
+        int num2 = 011;
+        int num3 = 0x11;
 
-    int num0 = 11;
-    int num1 = 0b11;
-    int num2 = 011;
-    int num3 = 0x11;
-    cout << "num0 " << num0 << endl;
-    cout << "num1 " << num1 << endl; 
-    cout << "num2 " << num2 << endl;
-    cout << "num3 " << num3 << endl;
-
+        cout << "num0 " << num0 << endl;
+        cout << "num1 " << num1 << endl; 
+        cout << "num2 " << num2 << endl;
+        cout << "num3 " << num3 << endl;
+    }
     /* sizeof operator */
+    {
+        int intNum = 0;
+        long longNum = 0;
+        int *intPointer = &intNum;
 
-    int intNum = 0;
-    long longNum = 0;
-    int *intPointer = &intNum;
-    cout << "sizeof(int) " << sizeof(intNum) << endl;
-    cout << "sizeof(long) " << sizeof(longNum) << endl;
-    cout << "sizeof(int *) " << sizeof(intPointer) << endl;
-
-    int8_t num00 = 0;
-    int16_t num11 = 0;
-    int32_t num22 = 0;
-    cout << "sizeof(int8_t) " << sizeof(num00) << endl;
-    cout << "sizeof(int16_t) " << sizeof(num11) << endl;
-    cout << "sizeof(int32_t) " << sizeof(num22) << endl;
-
+        cout << "sizeof(int) " << sizeof(intNum) << endl;
+        cout << "sizeof(long) " << sizeof(longNum) << endl;
+        cout << "sizeof(int *) " << sizeof(intPointer) << endl;
+    }
+    {
+        int8_t num00 = 0;
+        int16_t num11 = 0;
+        int32_t num22 = 0;
+        cout << "sizeof(int8_t) " << sizeof(num00) << endl;
+        cout << "sizeof(int16_t) " << sizeof(num11) << endl;
+        cout << "sizeof(int32_t) " << sizeof(num22) << endl;
+    }
+    /* Assignment with type */
+    {
+        int intNum_ = 11;
+        unsigned int uintNum = 11u;
+        long int longNum_ = 0L;
+        long long longLongNum = 0LL;
+        unsigned long long ulongLongNum = 0uLL;
+    }
     /* https://en.cppreference.com/w/cpp/types/numeric_limits */
+    {
+        cout << "numeric_limits<uint> 8 16 32 64, max()" << endl;
+        cout << (int)numeric_limits<uint8_t>::max() << endl;
+        cout << numeric_limits<uint16_t>::max() << endl;
+        cout << numeric_limits<uint32_t>::max() << endl;
+        cout << numeric_limits<uint64_t>::max() << endl;
+    }
+    {
+        cout << "numeric_limits<int> 8 16 32 64, max()" << endl;
+        cout << (int)numeric_limits<int8_t>::max() << endl;
+        cout << numeric_limits<int16_t>::max() << endl;
+        cout << numeric_limits<int32_t>::max() << endl;
+        cout << numeric_limits<int64_t>::max() << endl;
+    }
+    {
+        cout << "numeric_limits<int> 8 16 32 64, min()" << endl;
+        cout << (int)numeric_limits<int8_t>::min() << endl;
+        cout << numeric_limits<int16_t>::min() << endl;
+        cout << numeric_limits<int32_t>::min() << endl;
+        cout << numeric_limits<int64_t>::min() << endl;
+    }
+    /* Overflow, Underflow */
+    {
+        uint32_t unum32 = numeric_limits<uint32_t>::max();
+        uint32_t unum32_ = unum32 + 1;
 
-    cout << "numeric_limits<uint> 8 16 32 64, max()" << endl;
-    cout << (int)numeric_limits<uint8_t>::max() << endl;
-    cout << numeric_limits<uint16_t>::max() << endl;
-    cout << numeric_limits<uint32_t>::max() << endl;
-    cout << numeric_limits<uint64_t>::max() << endl;
+        cout << unum32 << endl;
+        cout << unum32_ << endl;
+    }
+    {
+        int32_t num32 = numeric_limits<int32_t>::max();
+        int32_t num32_ = num32 + 1; 
 
-    cout << "numeric_limits<int> 8 16 32 64, max()" << endl;
-    cout << (int)numeric_limits<int8_t>::max() << endl;
-    cout << numeric_limits<int16_t>::max() << endl;
-    cout << numeric_limits<int32_t>::max() << endl;
-    cout << numeric_limits<int64_t>::max() << endl;
+        cout << num32 << endl;
+        cout << num32_ << endl;
+    }
+    {
+        uint32_t unum32 = numeric_limits<uint32_t>::min();
+        uint32_t unum32_ = unum32 - 1;
 
-    cout << "numeric_limits<int> 8 16 32 64, min()" << endl;
-    cout << (int)numeric_limits<int8_t>::min() << endl;
-    cout << numeric_limits<int16_t>::min() << endl;
-    cout << numeric_limits<int32_t>::min() << endl;
-    cout << numeric_limits<int64_t>::min() << endl;
+        cout << unum32 << endl;
+        cout << unum32_ << endl;
+    }
+    {
+        int32_t num32 = numeric_limits<int32_t>::min();
+        int32_t num32_ = num32 - 1;
+
+        cout << num32 << endl;
+        cout << num32_ << endl;
+    }
 
     return 0;
 }
