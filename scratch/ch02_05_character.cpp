@@ -24,7 +24,9 @@ int main(void)
         cout << "ch0 : " << ch0 << endl;
         cout << "ch1 : " << ch1 << endl;
 
+        /* C Style */
         cout << "ch0 : " << (int)ch0 << endl;
+        /* C++ Style */
         cout << "ch1 : " << int(ch1) << endl;
 
         cout << (char)97 << endl;
@@ -34,7 +36,7 @@ int main(void)
     {
         cout << "sizeof(char) : " << sizeof(char) << endl;
     }
-    /* Escape Sequence */
+    /* https://en.wikipedia.org/wiki/ASCII */
     {
         
         cout << "New Line" << endl;
