@@ -23,8 +23,9 @@ int main(void)
         cout << "num2 " << num2 << endl;
         cout << "num3 " << num3 << endl;
     }
+    /* sizeof operator */
     {
-        /* sizeof operator */
+        
         float fnum = 1.0f;
         double dnum = 1.0;
         long double ldnum = 1.0L;
@@ -157,7 +158,7 @@ int main(void)
         float fNum0 = 1.0f;
         float fNum1;
         unsigned int intNum1 = 0b01001011000000000000000000000000;
-        memcpy(&fNum1, &intNum1, sizeof(intNum1)); // 1.0(2) * 2^23(2)
+        memcpy(&fNum1, &intNum1, sizeof(intNum1));
 
         cout << "CASE 2^23 :" << endl;
         cout << "   127 + 23 = 150 : 1001 0110" << endl;
@@ -170,7 +171,7 @@ int main(void)
         float fNum0 = 1.0f;
         float fNum1;
         unsigned int intNum1 = 0b01001011100000000000000000000000;
-        memcpy(&fNum1, &intNum1, sizeof(intNum1)); // 1.0(2) * 2^24(2)
+        memcpy(&fNum1, &intNum1, sizeof(intNum1));
 
         cout << "CASE 2^24 :" << endl;
         cout << "   127 + 25 = 104 : 1001 0111" << endl;
