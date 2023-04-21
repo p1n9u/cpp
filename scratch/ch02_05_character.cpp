@@ -4,16 +4,17 @@ using namespace std;
 
 int main(void)
 {
+    /* string */
     {
-        /* string */
         cout << "Hello World" << endl;
     }
+    /* char */
     {
-        /* char */
         cout << 'h' << endl;
     }
+    /* relation with integer */
     {
-        /* relation with integer */
+        
         char ch = 'a';
         cout << ch << endl;
 
